@@ -24,7 +24,7 @@ pipeline {
        } 
    stage('Dock image creation') {
        steps { 
-         sh 'docker build -t shankerchauhan/projects:finace'
+         sh 'docker build -t shankerchauhan/projects:finace .'
 	 } 
 	} 
      }
