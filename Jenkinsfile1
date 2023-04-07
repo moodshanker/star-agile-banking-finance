@@ -11,12 +11,12 @@ pipeline {
          git 'https://github.com/moodshanker/star-agile-banking-finance.git'
           }
         }
-     stage('Build the Application')
+     stage('Build the Application') {
          steps {
          echo "Cleaning... Compiling... Testing...Packaging..."
          sh 'mvn clean package'  
-             }
-            }
-          }
-        }
+         }
+       }
+     }
+   } 
 
