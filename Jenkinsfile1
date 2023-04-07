@@ -29,9 +29,9 @@ pipeline {
 	} 
    stage('docker push') { 
        steps {
-       withCredentials([usernamePassword(credentialsId: 'DOCKERHUB', paswordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-       sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-       }
+       withCredentials([usernamePassword(credentialsId: 'DOCKERHUB', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+        	sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+		}
        sh 'docker push shankerchauhan/projects:finace'
        }
        }
